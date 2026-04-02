@@ -3,7 +3,6 @@ import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from '@/infrastructure/config/swagger';
 
-
 interface ServerOptions {
   port: number;
   routes: IRouter;
