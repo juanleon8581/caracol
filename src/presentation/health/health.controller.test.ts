@@ -1,12 +1,13 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import request from 'supertest';
 import { Server } from '@/presentation/server';
+import { AppRoutes } from '../routes';
 
 describe('HealthController', () => {
   let app: ReturnType<Server['getApp']>;
 
   beforeAll(() => {
-    const server = new Server({ port: 0 });
+    const server = new Server({ port: 0, routes: AppRoutes.routes });
     app = server.getApp();
   });
 

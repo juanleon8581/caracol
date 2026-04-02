@@ -1,17 +1,16 @@
+import { envConfig } from './infrastructure/config/env';
+import { Server } from './presentation/server';
+import { AppRoutes } from './presentation/routes';
 
-import { envConfig } from "./infrastructure/config/env";
-import { Server } from "./presentation/server";
-import { AppRoutes } from "./presentation/routes";
-
-(async () => {
-    main();
+(async (): Promise<void> => {
+  main();
 })();
 
-function main() {
-    const server = new Server({
-        port: envConfig.port,
-        routes: AppRoutes.routes,
-    });
+function main(): void {
+  const server = new Server({
+    port: envConfig.port,
+    routes: AppRoutes.routes,
+  });
 
-    server.start();
+  server.start();
 }
